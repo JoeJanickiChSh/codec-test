@@ -3,8 +3,8 @@ import numpy as np
 
 SAMPLERATE = 16_000
 BAND_LOW = 80
-BAND_HIGH = 4000
-NUM_CHANNELS = 8
+BAND_HIGH = 3500
+NUM_CHANNELS = 6
 
 
 base = (BAND_HIGH / BAND_LOW) ** ( 1 / (NUM_CHANNELS-1) )
@@ -30,5 +30,6 @@ for center in centers:
     b0 /= a0
     b1 /= a0
     b2 /= a0
-    print(f"{{ {a0}, {a1}, {a2}, {b1}, {b2} }},")
+    print(f"f={center}, Q={q}, a1={a1}, a2={a2}, b0={b0}, b1={b1}, b2={b2}\n")
+
 
